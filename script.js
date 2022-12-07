@@ -69,4 +69,4 @@ function writePassword() {
 }
 
 // The event listener for the generate button
-generateBTn.addEventListener("click", writePassword);
+generateBtn.addEventListener("click", writePassword);
