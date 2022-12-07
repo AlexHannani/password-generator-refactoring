@@ -1,5 +1,5 @@
 // Assignment Code
-var generateBTn = document.querySelector("#generate");
+var generateBtn = document.querySelector("#generate");
 var chosenChar = []
 var password = ""
 
