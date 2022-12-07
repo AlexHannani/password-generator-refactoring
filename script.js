@@ -61,3 +61,10 @@ function generatePassword() {
   return finalPassword
 }
 
+// Insert random password into the #password input
+function writePassword() {
+  var password = generatePassword();
+  var passwordText = document.querySelector("#password")
+  passwordText.value = password;
+}
+
