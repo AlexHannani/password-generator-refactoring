@@ -3,10 +3,10 @@ var generateBTn = document.querySelector("#generate");
 var chosenChar = []
 var password = ""
 
-var arLowercase = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
-var arUppercase = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
-var arNumbers = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
-var arSpecial = ["!", "@", "#", "$", "%", "&", "*", "?", "_", "-", "^"];
+var lowerCase = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+var upperCase = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
+var numbers = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
+var specialChar = ["!", "@", "#", "$", "%", "&", "*", "?", "_", "-", "^"];
 
 function generatePassword() {
   var characterLength = prompt("How many characters do you want your password to be? Please select a number between 8 and 128")
@@ -16,21 +16,40 @@ function generatePassword() {
   }
 
   function characterSelection() {
-    var userSelectUpperCase = confirm("Do you want to include uppercase characters?")
-    var userSelectLowerCase = confirm("Do you want to include lowercase characters?")
-    var userSelectNumbers = confirm("Do you want to include numbers?")
-    var userSelectSpecial = confirm("Do you want to include speical characters?")
+    var userSelectupperCase = confirm("Do you want to include uppercase characters?")
+    var userSelectlowerCase = confirm("Do you want to include lowercase characters?")
+    var userSelectnumbers = confirm("Do you want to include numbers?")
+    var userSelectspecial = confirm("Do you want to include speical characters?")
   
     if (
-      !userSelectUpperCase &&
-      !userSelectLowerCase &&
-      !userSelectNumbers &&
-      !userSelectSpecial
+      !userSelectupperCase &&
+      !userSelectlowerCase &&
+      !userSelectnumbers &&
+      !userSelectspecial
     ) {
       alert("You must select at least one character type");
       generatePassword();
     }
 
-    
+    if (userSelectUpperCase) {
+      chosenChar = chosenChar.concat(upperCase)
+      password = password+chosenChar[Math.floor(Math.random() * upperCase.length)]
+    }
+
+    if (userSelectLowerCase) {
+      chosenChar = chosenChar.concat(lowerCase)
+      password = password+chosenChar[Math.floor(Math.random() * lowerCase.length)]
+    }
+
+    if (userSelectspecial) {
+      chosenChar = chosenChar.concat(specialChar)
+      password = password+chosenChar[Math.floor(Math.random() * specialChar.length)]
+    }
+
+    if (userSelectnumbers) {
+      chosenChar = chosenChar.concat(number)
+      password = chosenChar[Math.floor(Math.random() * number.length)]
+    }
   }
+  characterSelection()
 }
