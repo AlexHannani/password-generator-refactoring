@@ -52,4 +52,12 @@ function generatePassword() {
     }
   }
   characterSelection()
+
+  for (var index = 0; index < characterLength; index++) {
+    console.log(chosenChar);
+    var randomChar = chosenChar[Math.floor(Math.random() * chosenChar.length)]
+    var finalPassword = password += randomChar
+  }
+  return finalPassword
 }
+
