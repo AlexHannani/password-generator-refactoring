@@ -19,36 +19,36 @@ function generatePassword() {
     var userSelectupperCase = confirm("Do you want to include uppercase characters?")
     var userSelectlowerCase = confirm("Do you want to include lowercase characters?")
     var userSelectnumbers = confirm("Do you want to include numbers?")
-    var userSelectspecial = confirm("Do you want to include speical characters?")
+    var userSelectspecialChar = confirm("Do you want to include speical characters?")
   
     if (
       !userSelectupperCase &&
       !userSelectlowerCase &&
       !userSelectnumbers &&
-      !userSelectspecial
+      !userSelectspecialChar
     ) {
       alert("You must select at least one character type");
       generatePassword();
     }
 
-    if (userSelectUpperCase) {
+    if (userSelectupperCase) {
       chosenChar = chosenChar.concat(upperCase)
       password = password+chosenChar[Math.floor(Math.random() * upperCase.length)]
     }
 
-    if (userSelectLowerCase) {
+    if (userSelectlowerCase) {
       chosenChar = chosenChar.concat(lowerCase)
       password = password+chosenChar[Math.floor(Math.random() * lowerCase.length)]
     }
 
-    if (userSelectspecial) {
+    if (userSelectspecialChar) {
       chosenChar = chosenChar.concat(specialChar)
       password = password+chosenChar[Math.floor(Math.random() * specialChar.length)]
     }
 
     if (userSelectnumbers) {
-      chosenChar = chosenChar.concat(number)
-      password = chosenChar[Math.floor(Math.random() * number.length)]
+      chosenChar = chosenChar.concat(numbers)
+      password = chosenChar[Math.floor(Math.random() * numbers.length)]
     }
   }
   characterSelection();
