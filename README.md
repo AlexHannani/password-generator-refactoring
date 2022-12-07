@@ -10,5 +10,8 @@
 
 ## Screenshot
 
+![webpage screenshot](./assets/password-generator.png)
 
 ## Website Link
+
+[https://alexhannani.github.io/password-generator-refactoring/](https://alexhannani.github.io/password-generator-refactoring/)
