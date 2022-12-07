@@ -21,6 +21,16 @@ function generatePassword() {
     var userSelectNumbers = confirm("Do you want to include numbers?")
     var userSelectSpecial = confirm("Do you want to include speical characters?")
   
+    if (
+      !userSelectUpperCase &&
+      !userSelectLowerCase &&
+      !userSelectNumbers &&
+      !userSelectSpecial
+    ) {
+      alert("You must select at least one character type");
+      generatePassword();
+    }
+
     
   }
 }
