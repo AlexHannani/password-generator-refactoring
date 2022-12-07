@@ -68,3 +68,5 @@ function writePassword() {
   passwordText.value = password;
 }
 
+// The event listener for the generate button
+generateBTn.addEventListener("click", writePassword);
