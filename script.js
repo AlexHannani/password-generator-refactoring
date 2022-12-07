@@ -15,5 +15,12 @@ function generatePassword() {
     generatePassword();
   }
 
+  function characterSelection() {
+    var userSelectUpperCase = confirm("Do you want to include uppercase characters?")
+    var userSelectLowerCase = confirm("Do you want to include lowercase characters?")
+    var userSelectNumbers = confirm("Do you want to include numbers?")
+    var userSelectSpecial = confirm("Do you want to include speical characters?")
   
+    
+  }
 }
